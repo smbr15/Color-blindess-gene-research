@@ -1,0 +1,28 @@
+#The below commands can be executed in a Linux command line to retrieve the files used in this project.
+#All Linux code has been adapted from code provided by Arif Harmanci, PhD, as provided in BMI 5330 Introduction to Bioinformatics at the University of Texas Health Science Center.
+#Files for this project were retrieved July 2023. 
+
+#Obtain GENCODE annotation files:
+wget -c ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_43/gencode.v43.annotation.gff3.gz
+gzip -cd gencode.v43.annotation.gff3.gz | grep "gene_name=OPN1LW" > OPN1LW_annotations.txt 
+gzip -cd gencode.v43.annotation.gff3.gz | grep "gene_name=OPN1MW" > OPN1MW_annotations.txt 
+gzip -cd gencode.v43.annotation.gff3.gz | grep "gene_name=OPN1SW" > OPN1SW_annotations.txt 
+
+#Obtain CDS variant files:
+wget -c ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/phase1/analysis_results/integrated_call_sets/ALL.wgs.integrated_phase1_v3.20101123.snps_indels_sv.sites.vcf.gz
+gzip -cd ALL.wgs.integrated_phase1_v3.20101123.snps_indels_sv.sites.vcf.gz | awk {'if($1==7)print $1"\t"$2-1"\t"$2"\t"$8"\t.\t+"'} > chr7_variants.bed
+gzip -cd ALL.wgs.integrated_phase1_v3.20101123.snps_indels_sv.sites.vcf.gz | awk {'if($1==7)print $1"\t"$2-1"\t"$2"\t"$8"\t.\t+"'} > chr7_variants.txt
+gzip -cd ALL.wgs.integrated_phase1_v3.20101123.snps_indels_sv.sites.vcf.gz | awk '{if($1 == "X") print $1"\t"$2-1"\t"$2"\t"$8"\t.\t+"}' > chrX_variants.bed
+gzip -cd ALL.wgs.integrated_phase1_v3.20101123.snps_indels_sv.sites.vcf.gz | awk '{if($1 == "X") print $1"\t"$2-1"\t"$2"\t"$8"\t.\t+"}' > chrX_variants.txt
+
+#Parse CDS variant files for OPN1LW, OPN1MW, and OPN1SW:
+gzip -cd gencode.v43.annotation.gff3.gz | grep "gene_name=OPN1LW | awk ‘$3==“CDS”’ > OPN1LW_cds.txt 
+gzip -cd gencode.v43.annotation.gff3.gz | awk {'if($1=="chr7" && $3=="CDS")print $1"\t"$4"\t"$5"\t"$9"\t.\t"$7'} | sed 's/chr//g' > chr7_cds.txt
+gzip -cd gencode.v43.annotation.gff3.gz | awk {'if($1=="chrX" && $3=="CDS")print $1"\t"$4"\t"$5"\t"$9"\t.\t"$7'} | sed 's/chr//g' > chrX_cds.txt
+
+#DNA sequence files were not systematically pulled, but instead were manually retrieved from: https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/
+#Download chr7.fa.gz
+#Download chrX.fa.gz
+#Unzip files
+gzip -d chr7.fa.gz
+gzip -d chrX.fa.gz

@@ -8,7 +8,7 @@ gzip -cd gencode.v43.annotation.gff3.gz | grep "gene_name=OPN1LW" > OPN1LW_annot
 gzip -cd gencode.v43.annotation.gff3.gz | grep "gene_name=OPN1MW" > OPN1MW_annotations.txt 
 gzip -cd gencode.v43.annotation.gff3.gz | grep "gene_name=OPN1SW" > OPN1SW_annotations.txt 
 
-#Obtain CDS variant files:
+#Obtain CDS variant files from 1000 Genomes Project:
 wget -c ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/phase1/analysis_results/integrated_call_sets/ALL.wgs.integrated_phase1_v3.20101123.snps_indels_sv.sites.vcf.gz
 gzip -cd ALL.wgs.integrated_phase1_v3.20101123.snps_indels_sv.sites.vcf.gz | awk {'if($1==7)print $1"\t"$2-1"\t"$2"\t"$8"\t.\t+"'} > chr7_variants.bed
 gzip -cd ALL.wgs.integrated_phase1_v3.20101123.snps_indels_sv.sites.vcf.gz | awk {'if($1==7)print $1"\t"$2-1"\t"$2"\t"$8"\t.\t+"'} > chr7_variants.txt
@@ -26,3 +26,7 @@ gzip -cd gencode.v43.annotation.gff3.gz | awk {'if($1=="chrX" && $3=="CDS")print
 #Unzip files
 gzip -d chr7.fa.gz
 gzip -d chrX.fa.gz
+
+#Bedtools intersection between GENCODE annotation files and 1000 Genomes Project variant files:
+./bedtools intersect -u -a chr7_variants.bed -b chr7_cds.txt > cds7_overlapping_variants.txt
+./bedtools intersect -u -a chrX_variants.bed -b chrX_cds.txt > cdsX_overlapping_variants.txt

@@ -6,4 +6,4 @@ This is a high-level research project of OPN1LW, OPN1MW, and OPN1SW and their re
 2. Obtain reference protein sequences for each gene.
 3. Identify pathogenic single-nucleotide polymorphisms (SNPs) from dbSNP (https://www.ncbi.nlm.nih.gov/snp/).
 4. Review 1000 Genomes Project data for allelic frequencies of pathogenic SNPs.
-5. Summarize gene expression levels for each gene based on GTEx Portal (https://gtexportal.org/home/). 
+5. Summarize gene expression levels from 1000 Genomes Project sample files. 

@@ -26,5 +26,7 @@ gzip -cd ALL.wgs.integrated_phase1_v3.20101123.snps_indels_sv.sites.vcf.gz | awk
 ./bedtools intersect -u -a chr7_variants.bed -b chr7_cds.txt > cds7_overlapping_variants.txt
 ./bedtools intersect -u -a chrX_variants.bed -b chrX_cds.txt > cdsX_overlapping_variants.txt
 
-#Obtain gene expression sample files from 1000 Genomes Project:
+#Download the GEUVADIS RNA-Sequencing Project gene expression data: Open https://www.ebi.ac.uk/gxa/experiments/E-GEUV-1/Downloads?ref=biostudies
+
+#Download the gene expression demographic information file:
 wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/working/20130606_sample_info/20130606_sample_info.xlsx -O sample_info.xls

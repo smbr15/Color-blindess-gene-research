@@ -8,7 +8,7 @@ This is a high-level research project of OPN1LW, OPN1MW, and OPN1SW and their re
 4. Review 1000 Genomes Project data for allelic frequencies of pathogenic SNPs.
 5. Summarize gene expression levels from GEUVADIS RNA-Sequencing Project sample files. 
 
-#Summary of Findings:
+# Summary of Findings:
 1. Reference DNA sequence lengths:
      OPN1LW: 598 nucleotides
      OPN1MW: 2,289 nucleotides

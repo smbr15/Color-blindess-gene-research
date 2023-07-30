@@ -16,4 +16,4 @@ This is a high-level research project of OPN1LW, OPN1MW, and OPN1SW and their re
 2. Based on the clinical significance categories listed in dbSNP, no pathogenic SNPs were included in the 1000 Genomes Project variant files. Only non-pathogenic/unknown clinical significance variants were analyzed.
 3. The GEUVADIS RNA-Sequencing Project patient samples did not capture gene expression for OPN1MW. Gene expression values for OPN1LW were null. Only expression values for OPN1SW were analyzed.
    
-![Non-Pathogenic SNPS Average Allelic Frequency]([image link](https://github.com/smbr15/Color-blindess-gene-research/blob/main/nonpath%20SNP%20freq.png)https://github.com/smbr15/Color-blindess-gene-research/blob/main/nonpath%20SNP%20freq.png)
+![Non-Pathogenic SNPS Average Allelic Frequency](https://github.com/smbr15/Color-blindess-gene-research/blob/main/nonpath%20SNP%20freq.png)

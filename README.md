@@ -17,3 +17,7 @@ This is a high-level research project of OPN1LW, OPN1MW, and OPN1SW and their re
 3. The GEUVADIS RNA-Sequencing Project patient samples did not capture gene expression for OPN1MW. Gene expression values for OPN1LW were null. Only expression values for OPN1SW were analyzed.
    
 ![Non-Pathogenic SNPS Average Allelic Frequency](https://github.com/smbr15/Color-blindess-gene-research/blob/main/nonpath%20SNP%20freq.png)
+
+![Average OPN1SW Gene Expression by Population](https://github.com/smbr15/Color-blindess-gene-research/blob/main/opn1sw%20population%20gene%20expression.png)
+
+![Average OPN1SW Gene Expression by Sex](https://github.com/smbr15/Color-blindess-gene-research/blob/main/opn1sw%20sex%20gene%20expression.png)

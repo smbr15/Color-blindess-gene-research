@@ -1,5 +1,5 @@
 # Color-blindess-gene-research
-This is a high-level research project of OPN1LW, OPN1MW, and OPN1SW and their relationships to color blindness. Project was conducted and completed in July 2023.
+This is a high-level research project of OPN1LW, OPN1MW, and OPN1SW and their relationships to color blindness. Project was conducted and completed in July 2023. Access to data sources is outlined in file-retrieval.txt.
 
 # Project Steps:
 1. Perform general research of each gene in UCSC Genome Browser (https://genome.ucsc.edu/cgi-bin/hgGateway). Includes obtaining chromosome position, gene coordinates, and count of protein-coding regions.

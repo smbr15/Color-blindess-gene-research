@@ -248,7 +248,7 @@ plt.xlabel('Gene')
 #perform anova test to see if there is significant difference between average allelic frequencies of each gene (assume alpha = 0.05)
 
 test = scipy.stats.f_oneway(freqLWnum,freqMWnum,freqSWnum)
-print('Average allelic frequency t-test LW, MW, and SW: {}'.format(test))
+print('One-way ANOVA test for average allelic frequencies of LW, MW, and SW: {}'.format(test))
 
 #since p-val>0.05, the 3 means are not significantly different
 
